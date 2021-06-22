@@ -18,7 +18,7 @@ class Task5 {
 		int n=in.nextInt();
 		if(n>0) {
 			int mas[] = new int[n]; //TODO обработать нехватку памяти
-			fillArray(mas);
+			Task2.fillArrayRandom(0, 1000, mas);
 
 			for(int i=0;i<mas.length;i++)
 				if(mas[i]>i) out.println(i+") <\t "+mas[i]);//+" +");
@@ -29,14 +29,4 @@ class Task5 {
 
 		in.close();
 	}
-
-
-/*
-fillArray - заполняет элементы массива случайными положительными целыми числами от 0 до 1000
-*/
-	private static void fillArray(int mas[]) {
-		for(int i=0;i<mas.length;i++)
-			mas[i]=(int)(Math.random()*1000.);
-	}
-
 }

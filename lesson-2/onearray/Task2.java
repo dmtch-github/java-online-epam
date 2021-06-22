@@ -28,7 +28,7 @@ class Task2 {
 			
 			double mas[] = new double[n]; //TODO обработать нехватку памяти
 			//готовим последовательность чисел
-			fillArray((a<b?a:b),(a>b?a:b),mas);
+			fillArrayRandom((a<b?a:b),(a>b?a:b),mas);
 			sortArray(mas);
 
 			//заменяем числа большие, чем Z
@@ -53,12 +53,26 @@ class Task2 {
 		in.close();
 	}
 
-	private static void fillArray(double min, double max, double mas[]) {
+
+/*
+	fillArrayRandom - заполняет массив вещественными числами в диапазоне min - max
+		Область видимости пакет, для вызова из других программ.
+*/
+	static void fillArrayRandom(double min, double max, double mas[]) {
 		for(int i=0;i<mas.length;i++)
 			mas[i]=Math.random()*(max-min)+min;
 	}
 
-	private static void sortArray(double mas[]) {
+	static void fillArrayRandom(int min, int max, int mas[]) {
+		for(int i=0;i<mas.length;i++)
+			mas[i]=(int)(Math.random()*(max-min)+min);
+	}
+
+
+/*
+	sortArray - сортирует массив по возрастанию
+*/
+	static void sortArray(double mas[]) {
 		boolean change;
 		double a;
 		do {

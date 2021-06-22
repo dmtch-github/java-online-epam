@@ -27,7 +27,7 @@ class Task3 {
 				final DecimalFormat decimalFormat = new DecimalFormat(String.format("#0"+(num>0?".%0"+num+"d":""),0));
 				double precision = 1.0/Math.pow(10,num);
 
-				fillArray(mas);
+				Task2.fillArrayRandom(-100.,100.,mas);
 				int pos=0,neg=0,zero=0;
 				for(double i:mas) {
 					if(i>=precision) pos++;
@@ -46,12 +46,5 @@ class Task3 {
 		}
 
 		in.close();
-	}
-
-
-	private static void fillArray(double mas[]) {
-		double min=-100.,max=100.;
-		for(int i=0;i<mas.length;i++)
-			mas[i]=Math.random()*(max-min)+min;
 	}
 }

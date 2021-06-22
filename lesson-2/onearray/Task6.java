@@ -19,7 +19,7 @@ class Task6 {
 		if(n>2) {
 			double res = 0;
 			double mas[] = new double[n];	//здесь возможна исключающая ситуация
-			fillArrayRandom(mas);
+			Task2.fillArrayRandom(0., 1000., mas);
 			List<Integer> primes = new ArrayList<>();
 			fillArrayPrimes(n,primes);
 			for(int i = 0; i < primes.size(); i++) {
@@ -69,14 +69,5 @@ class Task6 {
 			}
 		}
 		return true;
-	}
-
-
-/*
-	fillArrayRandom - заполняет элементы массива случайными вещественными числами от 0 до 1000
-*/
-	private static void fillArrayRandom(double mas[]) {
-		for(int i=0;i<mas.length;i++)
-			mas[i]=Math.random()*1000.;
 	}
 }

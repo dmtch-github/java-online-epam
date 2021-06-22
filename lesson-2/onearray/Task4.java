@@ -18,7 +18,7 @@ class Task4 {
 		int n=in.nextInt();
 		if(n>0) {
 			double mas[] = new double[n]; //TODO обработать нехватку памяти
-			fillArray(mas);
+			Task2.fillArrayRandom(-1000., 1000., mas);
 
 			int imax=0,imin=0;
 			double max=0,min=0;
@@ -46,11 +46,5 @@ class Task4 {
 		}
 
 		in.close();
-	}
-
-	private static void fillArray(double mas[]) {
-		double min=-1000., max=1000.;
-		for(int i=0;i<mas.length;i++)
-			mas[i]=Math.random()*(max-min)+min;
 	}
 }
